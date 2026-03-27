@@ -1,0 +1,14 @@
+# Python
+_pycache_/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+.venv/
+
+#Jupyter
+.ipynb_checkpoints/
+
+# System
+.DS_Store
+Thumbs.db
