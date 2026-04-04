@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>TicketIQ — Intelligent Support Operations</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -304,6 +304,8 @@ header {
 .dash-hdr {
   display: flex; align-items: flex-end;
   justify-content: space-between; margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .internal-badge {
@@ -348,13 +350,14 @@ header {
 
 .f-btn.active, .f-btn:hover { background: var(--ink); color: #f0f0eb; border-color: var(--ink); }
 
-.tbl-wrap { background: var(--panel); border: 1px solid var(--border); }
+.tbl-wrap { background: var(--panel); border: 1px solid var(--border); overflow-x: auto; }
 
 .tbl-head {
   display: grid;
   grid-template-columns: 110px 1fr 160px 100px 90px 90px;
   padding: 11px 20px;
   background: var(--surface); border-bottom: 1px solid var(--border);
+  min-width: 600px;
 }
 
 .th {
@@ -369,6 +372,7 @@ header {
   grid-template-columns: 110px 1fr 160px 100px 90px 90px;
   padding: 13px 20px; border-bottom: 1px solid var(--border);
   transition: background 0.15s; cursor: pointer; align-items: center;
+  min-width: 600px;
 }
 
 .t-row:last-child { border-bottom: none; }
@@ -505,13 +509,170 @@ footer {
 footer span:first-child { color: var(--ink-mid); }
 footer span:last-child { color: var(--muted); }
 
+/* ============================================================ */
+/* MOBILE RESPONSIVENESS */
+/* ============================================================ */
+
 @media (max-width: 900px) {
-  .submit-layout { grid-template-columns: 1fr; }
-  .stats-row { grid-template-columns: 1fr 1fr; }
-  header, .wrap, footer { padding-left: 20px; padding-right: 20px; }
-  .tbl-head, .t-row { grid-template-columns: 90px 1fr 120px 90px; }
-  .th:nth-child(5), .th:nth-child(6), .td-conf, .td-time { display: none; }
-  .modal { width: 95vw; }
+  .submit-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  header, .wrap, footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .wrap {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  
+  .view-title {
+    font-size: 28px;
+  }
+  
+  .view-sub {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  .verdict-card {
+    padding: 18px;
+  }
+  
+  .verdict-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  /* Table horizontal scroll on mobile */
+  .tbl-wrap {
+    overflow-x: auto;
+  }
+  
+  /* Filter buttons wrap properly */
+  .filter-bar {
+    gap: 6px;
+  }
+  
+  .f-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+  
+  /* Stats cards */
+  .stat-card {
+    padding: 14px 16px;
+  }
+  
+  .stat-v {
+    font-size: 24px;
+  }
+  
+  .stat-k {
+    font-size: 9px;
+  }
+  
+  /* Modal on mobile */
+  .modal {
+    width: 95vw;
+    max-height: 85vh;
+  }
+  
+  .modal-bd {
+    padding: 16px;
+  }
+  
+  .modal-acts {
+    flex-direction: column;
+  }
+  
+  .btn-resolve, .btn-close {
+    width: 100%;
+  }
+  
+  /* Logo text on mobile */
+  .logo-name {
+    font-size: 16px;
+  }
+  
+  .live-ind {
+    display: none;
+  }
+  
+  /* Result panel on mobile */
+  .prob-lbl {
+    width: 100px;
+    font-size: 10px;
+  }
+  
+  .kw-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+  
+  footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 16px;
+  }
+  
+  footer span {
+    font-size: 9px;
+  }
+  
+  .dash-hdr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .view-title {
+    font-size: 24px;
+  }
+  
+  .stat-card {
+    padding: 10px 12px;
+  }
+  
+  .stat-v {
+    font-size: 20px;
+  }
+  
+  .stat-k {
+    font-size: 8px;
+  }
+  
+  .card-lbl {
+    font-size: 9px;
+  }
+  
+  .field label {
+    font-size: 10px;
+  }
+  
+  .sub-btn {
+    padding: 12px;
+    font-size: 11px;
+  }
+  
+  .verdict-badge {
+    font-size: 8px;
+    padding: 2px 8px;
+  }
 }
 </style>
 </head>
@@ -691,7 +852,7 @@ footer span:last-child { color: var(--muted); }
 
 <footer>
   <span>TicketIQ — ML-Powered Support Routing</span>
-  <span>Built by Aluka Precious Oluchukwu</span>
+  <span>Created by Aluka Precious Oluchukwu</span>
 </footer>
 
 <script>
