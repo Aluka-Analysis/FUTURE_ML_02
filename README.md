@@ -45,6 +45,7 @@ The demo includes:
 ---
 
 ## System Architecture
+```
 Customer Message
 │
 ▼
@@ -72,7 +73,7 @@ Department + Priority + Confidence + Keywords
 Displayed instantly on Agent Dashboard
 
 text
-
+```
 ---
 
 ## The Problem This Solves
@@ -308,84 +309,11 @@ FUTURE_ML_02/
 └── data/processed/               # Cleaned dataset
     └── cleaned_tickets.csv
 ```
-## Example API Request
-Request
-bash
-curl -X POST https://Aluka-P-support-ticket-api.hf.space/predict \
-  -H "Content-Type: application/json" \
-  -d '{"text": "My card was stolen"}'
-Response
-json
-{
-  "ticket_reference": "TKT-8D8C81AB",
-  "assessment_date": "2026-04-04T11:19:35",
-  "queue": {
-    "department": "Billing and Payments",
-    "confidence": 0.85
-  },
-  "priority": {
-    "level": "high",
-    "confidence": 0.92
-  },
-  "top_keywords": ["stolen", "card", "block"],
-  "recommendation": "HIGH PRIORITY: Route immediately to Billing and Payments team. Response within 2 hours recommended.",
-  "all_queue_probabilities": {
-    "Billing and Payments": 0.85,
-    "Technical Support": 0.08,
-    "Customer Service": 0.04,
-    "Product Support": 0.02,
-    "IT Support": 0.01
-  },
-  "all_priority_probabilities": {
-    "high": 0.92,
-    "medium": 0.06,
-    "low": 0.02
-  }
-}
-Business Impact
-This system demonstrates how machine learning can support customer support operations by:
-
-Reducing manual sorting from 100% to 20%
-
-Routing tickets instantly — under one second
-
-Flagging urgent issues — 72% recall for high priority
-
-Providing explainability — shows key words driving decisions
-
-Enabling agents to focus on solving, not sorting
-
-Limitations
-Limitation	Mitigation
-Short, vague tickets have low confidence	Flagged for human review
-Rare departments (General Inquiry, HR) have low recall	Documented as limitation, more data needed
-Priority detection still learning	Keyword override for security/outage cases
-German language performance not separately validated	Language-agnostic preprocessing applied
-Future Improvements
-Enhancement	Description
-Webhook integration	Auto-receive tickets from email/chat
-Agent authentication	Secure dashboard access
-Resolved tickets view	Audit trail and resolution tracking
-Model retraining pipeline	Regular updates with new data
-Multi-language fine-tuning	Better support for German tickets
-Model Card
-See MODEL_CARD.md for full model documentation including:
-
-Training data and preprocessing
-
-Performance metrics per class
-
-Limitations and bias analysis
-
-Business recommendations
+### Check model_card.md for more information
 
 Author
 Aluka Precious Oluchukwu
 Machine Learning Engineer
-
-Background: Philosophy → Machine Learning
-Intern at: Feature Intense
-Track: Future Interns ML Track
 
 LinkedIn
 https://www.linkedin.com/in/aluka-precious-b222a2356
@@ -395,6 +323,4 @@ https://github.com/Aluka-Analysis
 
 Email
 alukaprecious4@gmail.com
-
-Built because position 345 shouldn't exist.
 
