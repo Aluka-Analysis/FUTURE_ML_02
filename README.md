@@ -298,16 +298,16 @@ FUTURE_ML_02/
 │   ├── 01_eda.ipynb              # Exploratory Data Analysis
 │   └── 02_models_training.ipynb  # Model training
 │
-├── images/charts/                # Visualizations
-│   ├── queue_distribution.png
-│   ├── priority_distribution.png
-│   ├── language_distribution.png
-│   ├── confusion_matrix_queue.png
-│   ├── confusion_matrix_priority.png
-│   └── feature_importance_queue.png
+├──
 │
 └── data/processed/               # Cleaned dataset
-    └── cleaned_tickets.csv
+    └── cleaned_tickets.csv                 
+    ├── queue_distribution.png      # Visualizations
+    ├── priority_distribution.png
+    ├── language_distribution.png
+    ├── confusion_matrix_queue.png
+    ├── confusion_matrix_priority.png
+    └── feature_importance_queue.png
 ```
 ### Check model_card.md for more information
 
