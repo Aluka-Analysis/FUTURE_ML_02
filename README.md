@@ -1,9 +1,9 @@
-# FUTURE ML 02 — Support Ticket Classification System
+# FUTURE INTERNS ML TASK 02 — Support Ticket Classification System
 
 Production-grade machine learning system for automated customer support ticket classification and priority routing.
 
 **Author:** Aluka Precious Oluchukwu  
-**Machine Learning Engineer — Port Harcourt, Nigeria**
+**Machine Learning Engineer**
 
 **Live Demo**  
 https://aluka-analysis.github.io/FUTURE_ML_02
